@@ -96,14 +96,16 @@ class Ui_loginDialog(object):
         loginDialog.setWindowTitle("LOGIN")
 
     def role_selection_changed(self):
-        """Ensure only one role checkbox is selected at a time."""
-        if self.adminCheckBox.isChecked():
-            self.travellerCheckBox.setChecked(False)
-        elif self.travellerCheckBox.isChecked():
-            self.adminCheckBox.setChecked(False)
+       
+        if self.adminCheckBox.isChecked() and self.travellerCheckBox.isChecked():
+            
+            if self.adminCheckBox.hasFocus():
+                self.travellerCheckBox.setChecked(False)
+            elif self.travellerCheckBox.hasFocus():
+                self.adminCheckBox.setChecked(False)
 
     def get_selected_role(self):
-        """Returns the selected role or None if no role is selected."""
+       
         if self.adminCheckBox.isChecked():
             return "Admin"
         elif self.travellerCheckBox.isChecked():
@@ -111,7 +113,7 @@ class Ui_loginDialog(object):
         return None
 
     def login_user(self):
-        username = self.usernamelineEdit.text().strip()
+        username = self.usernamelineEdit.text().strip().lower()  
         password = self.passwordLinedit.text().strip()
         role = self.get_selected_role()
 
@@ -140,7 +142,7 @@ class Ui_loginDialog(object):
                     if role == stored_role:
                         QtWidgets.QMessageBox.information(None, "Login Successful", f"Welcome, {role}!")
                         
-                        if role=="Admin":
+                        if role == "Admin":
                             pass
                         else:
                             pass
@@ -158,8 +160,8 @@ class Ui_loginDialog(object):
             QtWidgets.QMessageBox.critical(None, "Database Error", f"Error logging in: {e}")
 
     def registerButtonClicked(self):
-        username = self.usernamelineEdit.text().strip()
-        password = self.passwordLinedit.text().strip()
+        username = self.usernamelineEdit.text().strip().lower()  
+        password = self.passwordLinedit.text().strip() 
         role = self.get_selected_role()
 
         if not username or not password:
@@ -189,7 +191,7 @@ class Ui_loginDialog(object):
                 conn.commit()
                 QtWidgets.QMessageBox.information(None, "Success", "Registration successful!")
                 
-                if role=="Admin":
+                if role == "Admin":
                     pass
                 else:
                     pass
@@ -199,11 +201,10 @@ class Ui_loginDialog(object):
         except Exception as e:
             QtWidgets.QMessageBox.critical(None, "Database Error", f"Error registering: {e}")
     
-    #commandLinkButtonClicked
     def commandLinkButtonClicked(self):
         from forgotpassword import Ui_ChangePasswordDialog
-        self.resetWindow=QtWidgets.QMainWindow()
-        self.ui=Ui_ChangePasswordDialog()
+        self.resetWindow = QtWidgets.QMainWindow()
+        self.ui = Ui_ChangePasswordDialog()
         self.ui.setupUi(self.resetWindow)
         self.resetWindow.setFixedSize(248, 257)
         self.resetWindow.show()

@@ -1,8 +1,7 @@
-
-
-
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from PyQt6.QtWidgets import *
+import psycopg2
+import random
 
 class Ui_ChangePasswordDialog(object):
     def setupUi(self, ChangePasswordDialog):
@@ -36,6 +35,13 @@ class Ui_ChangePasswordDialog(object):
         self.resetpushButton = QtWidgets.QPushButton(parent=ChangePasswordDialog)
         self.resetpushButton.setGeometry(QtCore.QRect(10, 210, 93, 28))
         self.resetpushButton.setObjectName("resetpushButton")
+        
+        self.resetpushButton.clicked.connect(self.resetpushButtonclicked)
+
+        
+        self.timer = QtCore.QTimer()
+        self.timer.timeout.connect(self.update_generated_number)
+        self.timer.start(30000) 
 
         self.retranslateUi(ChangePasswordDialog)
         QtCore.QMetaObject.connectSlotsByName(ChangePasswordDialog)
@@ -48,7 +54,43 @@ class Ui_ChangePasswordDialog(object):
         self.label_3.setText(_translate("ChangePasswordDialog", "Your Username"))
         self.label_4.setText(_translate("ChangePasswordDialog", "New Password"))
         self.resetpushButton.setText(_translate("ChangePasswordDialog", "Reset"))
+    
+    def resetpushButtonclicked(self):
+        username = self.resetPasswordUsernAmeLINeEdit.text().strip().lower()
+        newpassword = self.newpasswordLinedit.text().strip()
+        gnno = self.generatedNumberLinedit.text().strip()
+        
+        if not username or not newpassword or not gnno:
+            QMessageBox.warning(None, "Error", "All Fields Are required!")
+        else:
+            try:
+                connection = psycopg2.connect(
+                    host="localhost",
+                    user="postgres",
+                    password="3062",
+                    database="quickrideCompany"
+                )
+                cursor = connection.cursor()
+                cursor.execute("SELECT username FROM userLogin WHERE username = %s", (username,))
+                result = cursor.fetchone()
 
+                if result:
+                    changepassquery = "UPDATE userlogin SET password=%s WHERE username=%s"
+                    cursor.execute(changepassquery, (newpassword, username))
+                    
+                    connection.commit()
+                    cursor.close()
+                    connection.close()
+                    QMessageBox.information(None, "Success", "Password Updated Successfully!")
+                else:
+                    QMessageBox.critical(None, "User Error", "User Doesn't Exist In the database!")
+            except Exception as e:
+                QMessageBox.critical(None, "Error", f"Error occurred: {e}")
+
+    def update_generated_number(self):
+        
+        random_number = random.randint(1000, 10000)
+        self.label.setText(str(random_number))  
 
 if __name__ == "__main__":
     import sys
