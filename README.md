@@ -1,6 +1,4 @@
-Here's a detailed description of your project for the README file on GitHub:
 
----
 
 # QuickRideCompany Bus Booking Management System
 
