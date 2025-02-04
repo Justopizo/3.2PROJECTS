@@ -62,6 +62,7 @@ class Ui_MainWindow(object):
         self.myBookingpushbutton.clicked.connect(lambda:self.stackedWidget.setCurrentIndex(2))
         self.verticalLayout.addWidget(self.myBookingpushbutton)
         self.paymentspushbutton = QtWidgets.QPushButton(parent=self.widget1)
+       
         self.paymentspushbutton.setMinimumSize(QtCore.QSize(0, 48))
         self.paymentspushbutton.setObjectName("paymentspushbutton")
         self.paymentspushbutton.clicked.connect(lambda:self.stackedWidget.setCurrentIndex(3))
@@ -136,6 +137,8 @@ class Ui_MainWindow(object):
         self.timer=QTimer()
         self.timer.timeout.connect(self.populatehometableWidget)
         self.timer.timeout.connect(self.updatelcdDisplay)
+        self.timer.timeout.connect(self.setTexttonotificationplainTextEdit_notificationpage)
+        
         self.timer.start(10000)
         
         item = QtWidgets.QTableWidgetItem()
@@ -324,6 +327,7 @@ class Ui_MainWindow(object):
         self.totalFareLinedit.setGeometry(QtCore.QRect(150, 370, 271, 31))
         self.totalFareLinedit.setObjectName("totalFareLinedit")
         self.paypushButton = QtWidgets.QPushButton(parent=self.paymentPage)
+        self.paypushButton.clicked.connect(self.paypushButtonclicked)
         self.paypushButton.setGeometry(QtCore.QRect(160, 440, 141, 28))
         self.paypushButton.setObjectName("paypushButton")
         self.stackedWidget.addWidget(self.paymentPage)
@@ -391,6 +395,8 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
         
         self.logutpushbutton.clicked.connect(self.logouttoLoginWindow)
+        
+        self.updatemyBookingstableWidget_2()
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -401,7 +407,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Traveller Dashboard-QuickRideCompany"))
         self.homepushButton.setText(_translate("MainWindow", "Home"))
         self.bookAridepushbutton.setText(_translate("MainWindow", "Book a Ride"))
-        self.myBookingpushbutton.setText(_translate("MainWindow", "My Bookigs"))
+        self.myBookingpushbutton.setText(_translate("MainWindow", "My Bookings"))
         self.paymentspushbutton.setText(_translate("MainWindow", "Payments"))
         self.profilepushbutton.setText(_translate("MainWindow", "Profile"))
         self.notificationpushbutton.setText(_translate("MainWindow", "Notifications"))
@@ -465,6 +471,8 @@ class Ui_MainWindow(object):
         
         self.BOOKpushButton.clicked.connect(self.BOOKpushButtonClicked)
         
+        self.seatsPaymentsSeclineEdit.textChanged.connect(self.settotalfare)
+        
         self.ShwbookingsummaryButton.setText(_translate("MainWindow", "SHOW BOOKING SUMMARY"))
         self.ShwbookingsummaryButton.clicked.connect(self.ShwbookingsummaryButtonClicked)
         self.label_3.setText(_translate("MainWindow", "YOUR PREVIOUS BOOKINGS"))
@@ -481,6 +489,7 @@ class Ui_MainWindow(object):
         item = self.myBookingstableWidget_2.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "BUS"))
         self.cancelBokingcommandLinkButton.setText(_translate("MainWindow", "CLICK HERE IF YOU WANT TO CANCEL THE BOOKING"))
+        self.cancelBokingcommandLinkButton.clicked.connect(self.cancelBokingcommandLinkButtonClicked)
         self.label_16.setText(_translate("MainWindow", "Make Payments Of The Booking You made"))
         self.label_17.setText(_translate("MainWindow", "FROM"))
         self.label_18.setText(_translate("MainWindow", "TO"))
@@ -488,6 +497,7 @@ class Ui_MainWindow(object):
         self.label_20.setText(_translate("MainWindow", "PAYMENT METHOD"))
         self.paymentcomboBox.setItemText(0, _translate("MainWindow", "M-PESA"))
         self.paymentcomboBox.setItemText(1, _translate("MainWindow", "AIRTEL MONEY"))
+        self.totalFareLinedit.setReadOnly(True)
         self.paymentcomboBox.setItemText(2, _translate("MainWindow", "KCB"))
         self.paymentcomboBox.setItemText(3, _translate("MainWindow", "EQUITY"))
         self.label_21.setText(_translate("MainWindow", "TOTAL FARE"))
@@ -521,7 +531,8 @@ class Ui_MainWindow(object):
         self.toComboBox.currentTextChanged.connect(self.BOOKpushButtonClicked)
         self.NumberOfSeatsCombobox.currentTextChanged.connect(self.BOOKpushButtonClicked)
         self.BUScATEGORYcomboBox.currentTextChanged.connect(self.BOOKpushButtonClicked)"""
-        
+        self.helponHowToUsesystemcommandLinkButton.clicked.connect( self.helponHowToUsesystemcommandLinkButtonCliked)
+        self.reportanIssuecommandLinkButton.clicked.connect( self.reportanIssuecommandLinkButtonclicked)
     def SUBMITcOMPLAINpushButtonClicked(self):
         complain=self.plainTextEdit.toPlainText().strip()
         connection=self.connectDB()
@@ -758,6 +769,56 @@ class Ui_MainWindow(object):
             dialog.setLayout(layout)
             textEdit.setText(booking_details)
             dialog.exec()
+
+    
+    def updatemyBookingstableWidget_2(self):
+            connection=self.connectDB()
+            from populatemybookingsTaablewidget import populate_booking_table
+            populate_booking_table(self.myBookingstableWidget_2, self.connectDB)
+
+    def cancelBokingcommandLinkButtonClicked(self):
+            from cancelAbooking import CancelBookingDialog
+            dialog = CancelBookingDialog(self.connectDB())  
+            dialog.exec()
+    
+    
+    
+    def helponHowToUsesystemcommandLinkButtonCliked(self):
+            from howToUseSystemDialog import HowToUseDialog
+            dialog=HowToUseDialog()
+            dialog.exec()
+            
+   
+    def reportanIssuecommandLinkButtonclicked(self):
+            from reportanIssueDialog import ReportIssueDialog
+            dialog=ReportIssueDialog()
+            dialog.exec()
+            
+
+
+    def paypushButtonclicked(self):
+            fromplace=self.fromPaymentsSeclineEdit.text().lower()
+            destination=self.toPaymentsSeclineEdit.text().lower()
+            seats=self.seatsPaymentsSeclineEdit.text()
+            paymentmethod=self.paymentcomboBox.currentText()
+            totalfare=self.totalFareLinedit.text()
+            
+            if not fromplace or not destination or not seats or not paymentmethod or not totalfare:
+                    QMessageBox.information(None,"Error","All Fields Are Required!")
+            else:
+                    seats=int(seats)
+                    from calculateTotalFare import calculate_total_fare
+                    total_fare = calculate_total_fare(fromplace, destination, seats)
+                    total_fare=str(total_fare)
+                    QMessageBox.information(None,"Success",f"YOU WILL PAY {total_fare}")
+                   
+   
+    def settotalfare(self):
+        from calculateTotalFare import calculate_total_fare
+        total= calculate_total_fare(self.fromPaymentsSeclineEdit.text().lower(),self.toPaymentsSeclineEdit.text().lower(),int(self.seatsPaymentsSeclineEdit.text().lower()))
+        total=str(total)
+        self.totalFareLinedit.setText(total)
+                    
                     
             
 
