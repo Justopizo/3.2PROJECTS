@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1021</width>
+    <height>806</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Traveller Dashboard-QuickRideCompany</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1001</width>
+      <height>781</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>19</number>
+     </property>
+     <item>
+      <widget class="QWidget" name="widget_2" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>212</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QWidget{
+	
+	background-color: rgb(0, 0, 59);
+}
+QPushButton{
+	background-color: rgb(0, 0, 59);
+	color: white;
+	font: 11pt &quot;MS Shell Dlg 2&quot;;
+}
+
+</string>
+       </property>
+       <widget class="QWidget" name="">
+        <property name="geometry">
+         <rect>
+          <x>3</x>
+          <y>30</y>
+          <width>201</width>
+          <height>784</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="homepushButton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Home</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="bookAridepushbutton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>47</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Book a Ride</string>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+           <property name="autoExclusive">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="myBookingpushbutton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>47</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>My Bookigs</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="paymentspushbutton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Payments</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="profilepushbutton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Profile</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="notificationpushbutton">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>48</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Notifications</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="helpsupprtPhbutton">
+           <property name="text">
+            <string>Help Support</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="logutpushbutton">
+           <property name="text">
+            <string>Logout</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget" native="true">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 255, 255);</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QStackedWidget" name="stackedWidget">
+          <widget class="QWidget" name="homepage">
+           <widget class="QLabel" name="label">
+            <property name="geometry">
+             <rect>
+              <x>140</x>
+              <y>-20</y>
+              <width>471</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>WELCOME TO QUICKRIDECOMPANY</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_4">
+            <property name="geometry">
+             <rect>
+              <x>190</x>
+              <y>30</y>
+              <width>301</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Reach Your Destination On Time</string>
+            </property>
+           </widget>
+           <widget class="QLCDNumber" name="lcdNumber">
+            <property name="geometry">
+             <rect>
+              <x>610</x>
+              <y>650</y>
+              <width>101</width>
+              <height>81</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_5">
+            <property name="geometry">
+             <rect>
+              <x>500</x>
+              <y>620</y>
+              <width>241</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>AVAILABLE BUSES FOR A RIDE</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_6">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>100</y>
+              <width>301</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>TRIPS AVAILABLE TODAY</string>
+            </property>
+           </widget>
+           <widget class="QTableWidget" name="hometableWidget">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>140</y>
+              <width>741</width>
+              <height>251</height>
+             </rect>
+            </property>
+            <column>
+             <property name="text">
+              <string>BUS REG</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>DEPARTURE TIME</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>DEPARTURE FROM</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>DESTINATION</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>AVAILABLE SEATS</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>COST</string>
+             </property>
+            </column>
+           </widget>
+           <widget class="QLabel" name="label_7">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>400</y>
+              <width>431</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>YOU HAVE A COMPLAIN/COMMENT ON OUR SERVICES?</string>
+            </property>
+           </widget>
+           <widget class="QPlainTextEdit" name="plainTextEdit">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>430</y>
+              <width>741</width>
+              <height>87</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="SUBMITcOMPLAINpushButton">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>530</y>
+              <width>93</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>SUBMIT</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_8">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>730</y>
+              <width>431</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">
+font: 10pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Connecting You to Your Journey, Effortlessly.</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="bookAridepage">
+           <widget class="QLabel" name="label_2">
+            <property name="geometry">
+             <rect>
+              <x>170</x>
+              <y>10</y>
+              <width>411</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Book Your Ride: Fast, Easy, and Convenient</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_9">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>110</y>
+              <width>71</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>FROM</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="FromcomboBox">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>120</y>
+              <width>291</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>MOMBASA</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NAIROBI</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NAKURU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>KISII</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>KAKAMEGA</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>KISUMU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NAIVASHA</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>BUNGOMA</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LAMU</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QLabel" name="label_10">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>180</y>
+              <width>71</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>TO</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="toComboBox">
+            <property name="geometry">
+             <rect>
+              <x>110</x>
+              <y>190</y>
+              <width>291</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>MOMBASA</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NAIROBI</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>KISII</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>KISUMU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NAKURU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>KAKAMEGA</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NAIVASHA</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>BUNGOMA</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>LAMU</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QLabel" name="label_11">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>270</y>
+              <width>121</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>TRAVEL DATE</string>
+            </property>
+           </widget>
+           <widget class="QDateEdit" name="TRAVELdAETdateEdit">
+            <property name="geometry">
+             <rect>
+              <x>170</x>
+              <y>280</y>
+              <width>231</width>
+              <height>22</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_12">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>340</y>
+              <width>161</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>NUMBER OF SEATS</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="NumberOfSeatsCombobox">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>340</y>
+              <width>291</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Full Bus</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QLabel" name="label_13">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>410</y>
+              <width>131</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>BUS CATEGORY</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="BUScATEGORYcomboBox">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>420</y>
+              <width>291</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>STANDARD</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>EXECUTIVE</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VIP</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QLabel" name="label_14">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>480</y>
+              <width>121</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>NAME</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="NAMElineEdit">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>480</y>
+              <width>291</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_15">
+            <property name="geometry">
+             <rect>
+              <x>30</x>
+              <y>540</y>
+              <width>141</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>PHONE NUMBER</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="PHONEnumberlineedit">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>540</y>
+              <width>291</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="BOOKpushButton">
+            <property name="geometry">
+             <rect>
+              <x>200</x>
+              <y>620</y>
+              <width>93</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>BOOK</string>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="ShwbookingsummaryButton">
+            <property name="geometry">
+             <rect>
+              <x>330</x>
+              <y>620</y>
+              <width>161</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>SHOW BOOKING SUMMARY</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="bookingsPage">
+           <widget class="QLabel" name="label_3">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>-10</y>
+              <width>331</width>
+              <height>71</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 13pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>YOUR PREVIOUS BOOKINGS</string>
+            </property>
+           </widget>
+           <widget class="QTableWidget" name="myBookingstableWidget_2">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>120</y>
+              <width>751</width>
+              <height>211</height>
+             </rect>
+            </property>
+            <column>
+             <property name="text">
+              <string>FROM</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>TO</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>SEATS</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>COST</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>DEPARTURE TIME</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>BUS</string>
+             </property>
+            </column>
+           </widget>
+           <widget class="QCommandLinkButton" name="cancelBokingcommandLinkButton">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>370</y>
+              <width>431</width>
+              <height>48</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>CLICK HERE IF YOU WANT TO CANCEL THE BOOKING</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="paymentPage">
+           <widget class="QLabel" name="label_16">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>401</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>Make Payments Of The Booking You made</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_17">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>70</y>
+              <width>71</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>FROM</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="fromPaymentsSeclineEdit">
+            <property name="geometry">
+             <rect>
+              <x>90</x>
+              <y>71</y>
+              <width>271</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_18">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>140</y>
+              <width>71</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>TO</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="toPaymentsSeclineEdit">
+            <property name="geometry">
+             <rect>
+              <x>90</x>
+              <y>140</y>
+              <width>271</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_19">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>220</y>
+              <width>71</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>SEATS</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="seatsPaymentsSeclineEdit">
+            <property name="geometry">
+             <rect>
+              <x>90</x>
+              <y>220</y>
+              <width>271</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_20">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>300</y>
+              <width>181</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>PAYMENT METHOD</string>
+            </property>
+           </widget>
+           <widget class="QComboBox" name="paymentcomboBox">
+            <property name="geometry">
+             <rect>
+              <x>190</x>
+              <y>310</y>
+              <width>211</width>
+              <height>22</height>
+             </rect>
+            </property>
+            <item>
+             <property name="text">
+              <string>M-PESA</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>AIRTEL MONEY</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>KCB</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>EQUITY</string>
+             </property>
+            </item>
+           </widget>
+           <widget class="QLabel" name="label_21">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>360</y>
+              <width>121</width>
+              <height>51</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>TOTAL FARE</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="totalFareLinedit">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>370</y>
+              <width>271</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="paypushButton">
+            <property name="geometry">
+             <rect>
+              <x>160</x>
+              <y>440</y>
+              <width>141</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>PAY</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="profilepage">
+           <widget class="QLabel" name="label_22">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>251</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>EDIT YOUR PROFILE</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_23">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>100</y>
+              <width>101</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>NAME</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="namelineEdit_profilepage">
+            <property name="geometry">
+             <rect>
+              <x>120</x>
+              <y>91</y>
+              <width>341</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_24">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>170</y>
+              <width>131</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>PHONE NO.</string>
+            </property>
+           </widget>
+           <widget class="QLineEdit" name="phonenumberedit_profilepage">
+            <property name="geometry">
+             <rect>
+              <x>140</x>
+              <y>160</y>
+              <width>341</width>
+              <height>31</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="savepushButton_profilepage">
+            <property name="geometry">
+             <rect>
+              <x>150</x>
+              <y>240</y>
+              <width>93</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>SAVE</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="notificationPage">
+           <widget class="QPlainTextEdit" name="notificationplainTextEdit_notificationpage">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>50</y>
+              <width>751</width>
+              <height>521</height>
+             </rect>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_25">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>10</y>
+              <width>251</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>TODAY ANOUNCEMENTS</string>
+            </property>
+           </widget>
+          </widget>
+          <widget class="QWidget" name="helpandSupportPage">
+           <widget class="QLabel" name="label_26">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>0</y>
+              <width>101</width>
+              <height>16</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 11pt &quot;MS Shell Dlg 2&quot;;</string>
+            </property>
+            <property name="text">
+             <string>CREDITS</string>
+            </property>
+           </widget>
+           <widget class="QTextEdit" name="textEdit">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>50</y>
+              <width>751</width>
+              <height>301</height>
+             </rect>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;developed by ;&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;Senior Developer- Justin Ratemo&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;GUI developer- Amos Kilonzo&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;Languages&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;Python and Pyqt6 Framework&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;Database used&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt; PostgreSQL&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;PHONE NO. 0793031269&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:600; font-style:italic;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QCommandLinkButton" name="helponHowToUsesystemcommandLinkButton">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>380</y>
+              <width>321</width>
+              <height>48</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>Help on How to use system?</string>
+            </property>
+           </widget>
+           <widget class="QCommandLinkButton" name="reportanIssuecommandLinkButton">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>440</y>
+              <width>222</width>
+              <height>48</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>REPORT AN ISSUE</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

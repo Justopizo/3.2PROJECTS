@@ -41,7 +41,7 @@ class Ui_ChangePasswordDialog(object):
         
         self.timer = QtCore.QTimer()
         self.timer.timeout.connect(self.update_generated_number)
-        self.timer.start(30000) 
+        self.timer.start(10000) 
 
         self.retranslateUi(ChangePasswordDialog)
         QtCore.QMetaObject.connectSlotsByName(ChangePasswordDialog)

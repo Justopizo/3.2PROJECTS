@@ -1,14 +1,14 @@
 from PyQt6 import QtCore, QtWidgets
 import psycopg2
 
-# Database connection parameters
+
 DB_HOST = "localhost"
 DB_USER = "postgres"
 DB_PASSWORD = "3062"
 TARGET_DB = "quickrideCompany"
 
 def create_table_if_not_exists():
-    """Ensures that the 'userLogin' table exists in the database."""
+  
     try:
         conn = psycopg2.connect(
             host=DB_HOST,
@@ -145,7 +145,14 @@ class Ui_loginDialog(object):
                         if role == "Admin":
                             pass
                         else:
-                            pass
+                            from travellerDashboard import Ui_MainWindow
+                            self.travellerwindow = QtWidgets.QMainWindow()
+                            self.ui = Ui_MainWindow()
+                            self.ui.setupUi(self.travellerwindow)
+                            self.travellerwindow.setFixedSize(1021, 806)
+                            self.travellerwindow.show()
+                            
+                            QtWidgets.QApplication.instance().activeWindow().close()
                         
                     else:
                         QtWidgets.QMessageBox.warning(None, "Login Failed", "Role mismatch.")
@@ -194,7 +201,14 @@ class Ui_loginDialog(object):
                 if role == "Admin":
                     pass
                 else:
-                    pass
+                    from travellerDashboard import Ui_MainWindow
+                    self.travellerwindow = QtWidgets.QMainWindow()
+                    self.ui = Ui_MainWindow()
+                    self.ui.setupUi(self.travellerwindow)
+                    self.travellerwindow.setFixedSize(1021, 806)
+                    self.travellerwindow.show()
+                            
+                    QtWidgets.QApplication.instance().activeWindow().close()
 
             cur.close()
             conn.close()
