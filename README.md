@@ -1,57 +1,103 @@
-
-
 # QuickRideCompany Bus Booking Management System
 
-This is a Python-based Bus Booking Management System for the QuickRideCompany, using **PostgreSQL** as the backend database. The system allows users to book tickets, view available buses, and manage reservations seamlessly through a graphical user interface (GUI) built using **PyQt6**.
+## Overview
+QuickRideCompany is a robust **Bus Booking Management System** built using **Python (PyQt6) and PostgreSQL**. It provides an efficient way for travelers to book bus tickets, while offering an admin panel for managing bookings, buses, and payments.
 
 ## Features
-- **Traveler Dashboard**: Displays available buses, allows the traveler to view booking details, and manage reservations.
-- **Booking Management**: Enables users to make bookings, modify them, or cancel reservations.
-- **Login System**: A secure login interface to manage user authentication.
-- **Save and Export Booking Information**: Allows the user to save booking details as a `.docx` file.
-- **Progress Indicator**: Displays a loading animation while the booking details are being processed.
-- **User Management**: Admin can manage users and their associated bookings.
+### 1. **Traveler Dashboard**
+- Book a bus ticket by selecting departure and destination cities.
+- Choose travel date, number of seats, and bus category (VIP, Regular).
+- View booked trips and cancel bookings if needed.
+- Save booking confirmation as a **.docx** file.
+- Make payments via **MPesa API integration**.
 
-## Technology Stack
-- **Backend**: PostgreSQL
-- **GUI**: PyQt6
-- **Document Generation**: Python-docx
-- **File Dialogs**: QFileDialog from PyQt6
-- **Loading Animations**: QProgressDialog
+### 2. **Admin Dashboard**
+- **Manage Bookings**: View, edit, or cancel bookings.
+- **Manage Buses**: Add, update, and remove bus details.
+- **Manage Routes & Pricing**: Configure travel routes and set fare prices.
+- **View Payments**: Track completed and pending transactions.
+- **User Management**: Monitor and manage registered users.
+- **Reports & Analytics**: Generate reports for bookings, revenue, and system performance.
+- **System Settings**: Update company info, MPesa API keys, and configurations.
 
 ## Database Structure
-The system uses a PostgreSQL database with tables such as:
-- **userlogin**: Contains columns for `username` and `password` for user authentication.
-- **bookings**: Stores booking details such as passenger information, travel date, and bus assigned.
+The system uses **PostgreSQL** with the following key tables:
 
-## Setup Instructions
+### 1. `bookridetable`
+Stores travelers' bookings.
+```
+Columns: fromplace, destination, traveldate, noofseats, buscategory, name, phone
+```
 
-1. **Install PostgreSQL**: Ensure you have PostgreSQL installed and running on your local machine or a remote server.
-2. **Clone the repository**:  
+### 2. `bustable`
+Holds information about buses.
+```
+Columns: departuretime, busreg
+```
+
+### 3. `payment`
+Records payment transactions.
+```
+Columns: fromplace, destination, seats, payment_method, total_cost
+```
+
+## Pricing Structure
+The fare price is calculated based on departure and destination:
+- **Mombasa → Nairobi**: KES 2500
+- **Nairobi → Kisii**: KES 1000
+- **Kisumu → Nairobi**: KES 800
+- **Kakamega → Nairobi**: KES 1500
+- Other cities (Lamu, Bungoma, Naivasha, Nakuru) → Nairobi: **KES 1000**
+
+## MPesa API Integration
+- Supports MPesa STK push for seamless payments.
+- Uses **consumer key and secret** for authentication.
+- Requires **internet access** for transactions.
+- Users enter their phone number for payment processing.
+
+## How to Use
+### **Traveler Panel**
+1. **Sign Up / Log In**.
+2. **Book a Ride** – Select route, date, and category.
+3. **Pay via MPesa**.
+4. **Download Booking Confirmation**.
+5. **Cancel Booking (if necessary)**.
+
+### **Admin Panel**
+1. **Log In**.
+2. **Manage Bookings & Buses**.
+3. **View Payment Transactions**.
+4. **Analyze Reports & System Data**.
+
+## Developers
+- **Justin Omare Ratemo** – Lead Developer ([justopizo01@gmail.com](mailto:justopizo01@gmail.com))
+- **Amos Kilonzo** – Senior GUI Developer
+
+## Installation & Setup
+### Requirements
+- Python 3.x
+- PostgreSQL
+- PyQt6
+- `docx` (for saving booking confirmations)
+- Internet connection (for MPesa API)
+
+### Running the Project
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/quickridecompany-bus-booking-system.git
+   git clone https://github.com/yourusername/QuickRideCompany.git
+   cd QuickRideCompany
    ```
-3. **Set up the database**:
-   - Create a new database and tables based on the SQL schema provided in the project.
-   - Configure database connection settings in the Python code where necessary.
-4. **Install required libraries**:  
-   Create and activate a virtual environment, then install the dependencies:
+2. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
-5. **Run the application**:
-   - Start the GUI application:
+3. **Set up the PostgreSQL database**
+   - Create the required tables.
+4. **Run the Application**
    ```bash
-   python travellerDashboard.py
+   python main.py
    ```
 
-## Features in Progress
-- Adding more detailed user roles and permissions.
-- Enhanced reporting and analytics for bookings.
-
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is open-source under the MIT License.
 
----
-
-Y# 3.2PROJECTS
